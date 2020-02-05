@@ -1,19 +1,22 @@
 extends KinematicBody
 
 const SPEED = 5
+const ROTATION_SPEED = 8
 
 var velocity = Vector3(0, 0, 0)
 
 func _ready():
-	print("Hello Godot!")
+	pass
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	if Input.is_action_pressed("ui_right") and Input.is_action_pressed("ui_left"):
 		velocity.x = 0
 	elif Input.is_action_pressed("ui_right"):
 		velocity.x = SPEED
+		$MeshInstance.rotate_z(deg2rad(-ROTATION_SPEED))
 	elif Input.is_action_pressed("ui_left"):
 		velocity.x = -SPEED
+		$MeshInstance.rotate_z(deg2rad(ROTATION_SPEED))
 	else:
 		velocity.x = lerp(velocity.x, 0, 0.1)
 	
@@ -21,9 +24,11 @@ func _physics_process(delta):
 		velocity.z = 0
 	elif Input.is_action_pressed("ui_up"):
 		velocity.z = -SPEED
+		$MeshInstance.rotate_x(deg2rad(-ROTATION_SPEED))
 	elif Input.is_action_pressed("ui_down"):
 		velocity.z = SPEED
+		$MeshInstance.rotate_x(deg2rad(ROTATION_SPEED))
 	else:
 		velocity.z = lerp(velocity.z, 0, 0.1)
 	
-	move_and_slide(velocity)
+	var _ok = move_and_slide(velocity)
