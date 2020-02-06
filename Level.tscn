@@ -19,8 +19,11 @@ size = Vector3( 30, 2, 30 )
 
 [node name="Level" type="Spatial"]
 
-[node name="Camera" type="Camera" parent="."]
-transform = Transform( 1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, 1, 5, 15 )
+[node name="InterpolatedCamera" type="InterpolatedCamera" parent="."]
+transform = Transform( 1, 0, 0, 0, 0.906308, 0.422618, 0, -0.422618, 0.906308, 0, 11, 21 )
+target = NodePath("../Steve/CameraTarget")
+speed = 3.0
+enabled = true
 
 [node name="Floor" type="StaticBody" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
@@ -45,3 +48,6 @@ material/0 = null
 [node name="Steve" parent="." instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
 script = ExtResource( 2 )
+
+[node name="CameraTarget" type="Spatial" parent="Steve"]
+transform = Transform( 1, 0, 0, 0, 0.848048, 0.529919, 0, -0.529919, 0.848048, 0, 6, 8 )
