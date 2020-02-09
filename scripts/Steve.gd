@@ -1,6 +1,6 @@
 extends KinematicBody
 
-const SPEED = 5
+const SPEED = 8
 const ROTATION_SPEED = 8
 
 var velocity = Vector3(0, 0, 0)
