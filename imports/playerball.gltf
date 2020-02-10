@@ -21,7 +21,7 @@
     "materials" : [
         {
             "doubleSided" : true,
-            "name" : "luxoMaterial",
+            "name" : "material-playerball",
             "pbrMetallicRoughness" : {
                 "baseColorTexture" : {
                     "index" : 0,
