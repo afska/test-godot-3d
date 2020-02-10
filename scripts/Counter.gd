@@ -1,5 +1,7 @@
 extends Label
 
+signal you_win
+
 var coins = 0
 
 func _ready():
@@ -10,4 +12,4 @@ func _on_coin_collected():
 	_ready()
 	
 	if coins == 5:
-		get_tree().change_scene("res://screens/YouWin.tscn")
+		emit_signal("you_win")

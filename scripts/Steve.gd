@@ -1,5 +1,7 @@
 extends KinematicBody
 
+signal you_lose
+
 const SPEED = 8
 const ROTATION_SPEED = 8
 
@@ -35,4 +37,4 @@ func _physics_process(_delta):
 
 func _on_Enemy_body_entered(body):
 	if body.name == "Steve":
-		get_tree().change_scene("res://screens/GameOver.tscn")
+		emit_signal("you_lose")

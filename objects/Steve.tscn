@@ -2,7 +2,6 @@
 
 [ext_resource path="res://imports/player_ball.tres" type="ArrayMesh" id=1]
 
-
 [sub_resource type="BoxShape" id=1]
 
 [node name="Steve" type="KinematicBody"]
