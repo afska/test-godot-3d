@@ -49,9 +49,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, 0 )
 mesh = SubResource( 2 )
 material/0 = null
 
-[node name="Timer" type="Timer" parent="."]
-wait_time = 0.4
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/bounce = SubResource( 3 )
-[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]

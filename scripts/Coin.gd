@@ -11,8 +11,8 @@ func _on_Coin_body_entered(body):
 	if body.name == "Steve":
 		emit_signal("coin_collected")
 		$AnimationPlayer.play("bounce")
-		$Timer.start()
 
 # (connected through Coin scene)
-func _on_Timer_timeout():
-	queue_free()
+func _on_AnimationPlayer_animation_finished(anim_name):
+	if anim_name == "bounce":
+		queue_free()
