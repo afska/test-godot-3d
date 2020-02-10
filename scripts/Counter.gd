@@ -10,4 +10,4 @@ func _on_coin_collected():
 	_ready()
 	
 	if coins == 5:
-		get_tree().change_scene("res://YouWin.tscn")
+		get_tree().change_scene("res://screens/YouWin.tscn")

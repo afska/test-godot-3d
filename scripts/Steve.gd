@@ -35,4 +35,4 @@ func _physics_process(_delta):
 
 func _on_Enemy_body_entered(body):
 	if body.name == "Steve":
-		get_tree().change_scene("res://GameOver.tscn")
+		get_tree().change_scene("res://screens/GameOver.tscn")
