@@ -32,3 +32,7 @@ func _physics_process(_delta):
 		velocity.z = lerp(velocity.z, 0, 0.1)
 	
 	var _ok = move_and_slide(velocity)
+
+func _on_Enemy_body_entered(body):
+	if body.name == "Steve":
+		get_tree().change_scene("res://GameOver.tscn")
